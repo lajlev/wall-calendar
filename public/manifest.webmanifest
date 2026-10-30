@@ -1,0 +1,11 @@
+{
+  "name": "Familiekalender",
+  "short_name": "Kalender",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FFFFFF",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

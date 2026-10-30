@@ -1,0 +1,52 @@
+{
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*"
+    ],
+    "headers": [
+      {
+        "source": "**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
+          }
+        ]
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/api/**",
+        "function": {
+          "functionId": "wallcalendar",
+          "region": "europe-west1"
+        }
+      },
+      {
+        "source": "/auth/**",
+        "function": {
+          "functionId": "wallcalendar",
+          "region": "europe-west1"
+        }
+      }
+    ],
+    "site": "lillefar-wall-calendar"
+  },
+  "functions": {
+    "source": "functions",
+    "runtime": "nodejs22",
+    "ignore": [
+      "node_modules",
+      ".env.example"
+    ],
+    "codebase": "wall-calendar"
+  },
+  "firestore": [
+    {
+      "database": "wall-calendar",
+      "rules": "firestore.rules"
+    }
+  ]
+}
